@@ -8,6 +8,17 @@
 >```
 >
 >Dont forget to add the directory to your PATH variables!
+>After this install the latest version (be sure youre in the EMSDK folder that you cloned before)
+>
+>```CMD
+>   emsdk install latest
+>```
+>
+>First off you have to activate the Env. with:
+>
+>```CMD
+>   emsdk activate latest
+>```
 >
 >Use the follow command to compile with Assembler:
 >
