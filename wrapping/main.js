@@ -1,7 +1,8 @@
 const paragraph = document.getElementById("triggertext");
 var oldText = paragraph.innerText;
 // store c function for multiple usage
-var addCFunc = Module.cwrap("addNums", "number", ["number", "number"])
+var addCFunc = Module.cwrap("addNums", "number", ["number", "number"]);
+var subCFunc = Module.cwrap("subtractNums", "number", ["number", "number"]);
 
 function run_wasm(){
     const solution = document.getElementById("solution");
@@ -23,16 +24,12 @@ function run_wasm(){
         [numberA ,numberB]
     )
     
-    if (paragraph.innerText == "works"){
-        paragraph.innerText = String(oldText);
-    }else{
-        paragraph.innerText = "works";
-    }
-
     if(numberA != "" && numberB != ""){
         solution.style.color =  "green";
-        solution.innerText = "Your Solution is: " + String(addCFunc(numberA, numberB));        
+        paragraph.innerText = "Works!";
+        solution.innerText = "Your addition Solution is: " + String(addCFunc(numberA, numberB)) + "\nYour substact Solution is: " + String(subCFunc(numberA, numberB));        
     }else if ( numberA == "" || numberB == ""){
+        paragraph.innerText = String(oldText);
         solution.style.color =  "darkred";
         if (numberA == ""){
             solution.innerText = "No Number A selected."
@@ -41,6 +38,7 @@ function run_wasm(){
             solution.innerText = "No Number B selected."
         }
     }else{
+        paragraph.innerText = String(oldText);
         solution.innerText = "No numbers selected!";
     }
     

@@ -1497,6 +1497,9 @@ var ___wasm_call_ctors = Module["___wasm_call_ctors"] = createExportWrapper("__w
 var _addNums = Module["_addNums"] = createExportWrapper("addNums");
 
 /** @type {function(...*):?} */
+var _subtractNums = Module["_subtractNums"] = createExportWrapper("subtractNums");
+
+/** @type {function(...*):?} */
 var ___original_main = Module["___original_main"] = createExportWrapper("__original_main");
 
 /** @type {function(...*):?} */
