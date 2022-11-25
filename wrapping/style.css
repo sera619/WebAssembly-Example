@@ -20,6 +20,9 @@
     color: #111;
     font-weight: 600;
 }
+#mainText {
+    color: darkred;
+}
 
 #section1 button:hover{
     color: aqua;
@@ -41,4 +44,11 @@
     width: 25%;
     background-color: aquamarine;
     color:#111;
+}
+
+.txtInput {
+    color: #111;
+    background-color:ghostwhite;
+    border-radius: 5px;
+    text-align: center;
 }
