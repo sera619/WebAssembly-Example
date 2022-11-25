@@ -4,14 +4,17 @@
 
 #section1{
     text-align: center;
-    justify-items: center;
+    column-rule: 1px solid lightblue;
+    column-count: 1;
+   
     color: #fff;
 }
 
 #section1 button {
     border: aqua;
     background-color: aqua;
-    padding: 10px 25px;
+    padding: 5px 25px;
+    margin-top: 5%;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 10px aqua;
     transition: 0.5s;
@@ -25,4 +28,13 @@
     background-color: blue;
     box-shadow: 0px 0px 5px 10px blue;
     transition: 0.5s;
+}
+
+#solution {
+    color: darkred;
+}
+.numInput {
+    background-color: #fff;
+    padding: auto;
+    margin: auto;
 }

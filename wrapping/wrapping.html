@@ -11,11 +11,20 @@
 <body>
     <section id="section1">
         <h1>Webassembly Wrapping</h1>
-        <p id="triggertext">Click the Button to try out.</p>
+        <p id="triggertext">Click the Button to try out a simple addition of numbers!</p>
         <script src="main.js"></script>
-
-
-        <button onclick="run_wasm()">Run</button>
+        <div class="column">
+            <input class="numInput" type="number" id="numA" placeholder="Input the first Number to add">
+        </div>
+        <div class="column">
+            <input class="numInput" type="number" id="numB" placeholder="Input the second Number to add">
+        </div>
+        <div class="column">
+            <p id="solution">5</p>
+        </div>
+        <div class="column">
+            <button onclick="run_wasm()">Run</button>
+        </div>
     </section>
 </body>
 </html>
