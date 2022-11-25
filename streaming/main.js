@@ -8,6 +8,10 @@ function run_wasm(){
     ).then(results => {
         var a = document.querySelector("#a").value;
         var textField = document.querySelector("#mainText");
+        if (!a){
+            textField.innerText = "Please select a number before run!";
+            return;
+        }
         // use the functions deffinied in the WASM file
         var sum = results.instance.exports.sumOfNInts(a);
 
