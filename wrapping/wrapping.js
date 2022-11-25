@@ -1468,6 +1468,18 @@ var ASM_CONSTS = {
       ret = onDone(ret);
       return ret;
     }
+
+  
+    /**
+     * @param {string=} returnType
+     * @param {Array=} argTypes
+     * @param {Object=} opts
+     */
+  function cwrap(ident, returnType, argTypes, opts) {
+      return function() {
+        return ccall(ident, returnType, argTypes, arguments, opts);
+      }
+    }
 var ASSERTIONS = true;
 
 function checkIncomingModuleAPI() {
@@ -1540,6 +1552,7 @@ var dynCall_jiji = Module["dynCall_jiji"] = createExportWrapper("dynCall_jiji");
 // === Auto-generated postamble setup entry stuff ===
 
 Module["ccall"] = ccall;
+Module["cwrap"] = cwrap;
 var unexportedRuntimeSymbols = [
   'run',
   'UTF8ArrayToString',
@@ -1639,7 +1652,6 @@ var unexportedRuntimeSymbols = [
   'convertI32PairToI53Checked',
   'convertU32PairToI53',
   'getCFunc',
-  'cwrap',
   'uleb128Encode',
   'sigToWasmTypes',
   'generateFuncType',
@@ -1830,7 +1842,6 @@ var missingLibrarySymbols = [
   'convertI32PairToI53',
   'convertI32PairToI53Checked',
   'convertU32PairToI53',
-  'cwrap',
   'uleb128Encode',
   'sigToWasmTypes',
   'generateFuncType',

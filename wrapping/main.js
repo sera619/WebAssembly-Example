@@ -1,7 +1,7 @@
-
 const paragraph = document.getElementById("triggertext");
 var oldText = paragraph.innerText;
-
+// store c function for multiple usage
+var addCFunc = Module.cwrap("addNums", "number", ["number", "number"])
 
 function run_wasm(){
     const solution = document.getElementById("solution");
@@ -15,6 +15,7 @@ function run_wasm(){
     var numberB = document.querySelector("#numB").value;
     
     console.log(result);
+    // directly call the c function
     var addResult = Module.ccall(
         "addNums",
         "number",
@@ -30,7 +31,7 @@ function run_wasm(){
 
     if(numberA != "" && numberB != ""){
         solution.style.color =  "green";
-        solution.innerText = "Your Solution is: " + addResult;
+        solution.innerText = "Your Solution is: " + String(addCFunc(numberA, numberB));        
     }else if ( numberA == "" || numberB == ""){
         solution.style.color =  "darkred";
         if (numberA == ""){
