@@ -13,6 +13,6 @@ int subtractNums(int a, int b){
 
 EMSCRIPTEN_KEEPALIVE
 int main() {
-    printf("Hello World!\nThis is Web-Assembly!\n");
+    printf("This is Web-Assembly!\n");
     return 0;
 }
