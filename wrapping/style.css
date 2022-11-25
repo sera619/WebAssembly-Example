@@ -1,0 +1,28 @@
+*{
+    background-color: #111;
+}
+
+#section1{
+    text-align: center;
+    justify-items: center;
+    color: #fff;
+}
+
+#section1 button {
+    border: aqua;
+    background-color: aqua;
+    padding: 10px 25px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 10px aqua;
+    transition: 0.5s;
+    text-transform: uppercase;
+    color: #111;
+    font-weight: 600;
+}
+
+#section1 button:hover{
+    color: aqua;
+    background-color: blue;
+    box-shadow: 0px 0px 5px 10px blue;
+    transition: 0.5s;
+}
