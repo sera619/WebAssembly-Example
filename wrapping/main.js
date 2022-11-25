@@ -15,6 +15,12 @@ function run_wasm(){
     var numberB = document.querySelector("#numB").value;
     
     console.log(result);
+    var addResult = Module.ccall(
+        "addNums",
+        "number",
+        ["number", "number"],
+        [numberA ,numberB]
+    )
     
     if (paragraph.innerText == "works"){
         paragraph.innerText = String(oldText);
@@ -24,7 +30,7 @@ function run_wasm(){
 
     if(numberA != "" && numberB != ""){
         solution.style.color =  "green";
-        solution.innerText = "Your Solution is: " + String(Number(numberA) + Number(numberB));
+        solution.innerText = "Your Solution is: " + addResult;
     }else if ( numberA == "" || numberB == ""){
         solution.style.color =  "darkred";
         if (numberA == ""){
